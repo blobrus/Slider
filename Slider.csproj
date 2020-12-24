@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Solve.cs" />
     <Compile Include="SliderForm.cs">
       <SubType>Form</SubType>
     </Compile>

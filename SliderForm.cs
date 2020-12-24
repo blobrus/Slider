@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;  // For hotkeys
 
@@ -13,6 +13,7 @@ namespace Slider
 {
     public partial class SliderForm : Form
     {
+        Solve solveThread = new Solve();
         // Importing RegisterHotKey Method
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
@@ -23,15 +24,15 @@ namespace Slider
             //Registering hotkeys
             int startHotKey = 1;
             int stopHotKey = 2;
-            int resetHotKey = 3;
+            int clearHotKey = 3;
 
             int startKeyCode = (int)Keys.F9;
             int stopKeyCode = (int)Keys.F10;
-            int resetKeyCode = (int)Keys.F11;
+            int clearKeyCode = (int)Keys.F11;
 
             Boolean startRegistered = RegisterHotKey(this.Handle, startHotKey, 0x0000, startKeyCode);
             Boolean stopRegistered = RegisterHotKey(this.Handle, stopHotKey, 0x0000, stopKeyCode);
-            Boolean resetRegistered = RegisterHotKey(this.Handle, resetHotKey, 0x0000, resetKeyCode);
+            Boolean clearRegistered = RegisterHotKey(this.Handle, clearHotKey, 0x0000, clearKeyCode);
 
 
             if (startRegistered)
@@ -42,16 +43,16 @@ namespace Slider
             {
                 Console.WriteLine("Stop successfully registered");
             }
-            if (resetRegistered)
+            if (clearRegistered)
             {
-                Console.WriteLine("Reset successfully registered");
+                Console.WriteLine("Clear successfully registered");
             }
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("F9 pressed!");
         }
 
         protected override void WndProc(ref Message m)
@@ -63,13 +64,15 @@ namespace Slider
                 switch (id)
                 {
                     case 1:
-                        MessageBox.Show("F9 pressed!");
+                        GlobalVariables.isRunning = true;
+                        Thread thr = new Thread(Solve.startSolving);
+                        thr.Start();
                         break;
                     case 2:
-                        MessageBox.Show("F10 pressed!");
+                        GlobalVariables.isRunning = false;
                         break;
                     case 3:
-                        MessageBox.Show("F11 pressed!");
+                        StepText.Clear();
                         break;
                 }
             }
