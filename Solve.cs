@@ -14,9 +14,10 @@ namespace Slider
 
         }
 
-        public static void startSolving()
-        {
-            MessageBox.Show("Worked!");
+        public void StartSolving(object data)
+        {          
+            SolverData sd = (SolverData)data;
+            MessageBox.Show($"{sd.Instructions}");
             GlobalVariables.isRunning = false;
 
             return;

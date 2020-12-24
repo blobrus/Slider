@@ -65,8 +65,10 @@ namespace Slider
                 {
                     case 1:
                         GlobalVariables.isRunning = true;
-                        Thread thr = new Thread(Solve.startSolving);
-                        thr.Start();
+                        SolverData sd = new SolverData(StepText.Text);
+                        Solve s = new Solve();
+                        Thread thr = new Thread(s.StartSolving);
+                        thr.Start(sd);
                         break;
                     case 2:
                         GlobalVariables.isRunning = false;
