@@ -6,8 +6,6 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Windows.Forms;
-using WindowsInput.Native;
-using WindowsInput;
 using System.Threading.Tasks;
 
 namespace Slider
@@ -27,7 +25,6 @@ namespace Slider
             SolverData sd = (SolverData)data;
             string[] commandsList = Commands(sd.Instructions);
             var rand = new Random();
-            InputSimulator sim = new InputSimulator();
             Process p = Process.GetProcessesByName("rs2client").FirstOrDefault();
 
             if (p != null)
@@ -49,22 +46,22 @@ namespace Slider
 
                     if (command.Contains("up"))
                     {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.UP);
+                        SendKeys.SendWait("{UP}");
                         Task.Delay(sleepDelay).Wait();
                     }
                     else if (command.Contains("left"))
                     {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+                        SendKeys.SendWait("{Left}");
                         Task.Delay(sleepDelay).Wait();
                     }
                     else if (command.Contains("right"))
                     {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+                        SendKeys.SendWait("{RIGHT}");
                         Task.Delay(sleepDelay).Wait();
                     }
                     else if (command.Contains("down"))
                     {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.DOWN);
+                        SendKeys.SendWait("{DOWN}");
                         Task.Delay(sleepDelay).Wait();
 
                     }
