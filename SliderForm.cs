@@ -64,6 +64,7 @@ namespace Slider
                         Solve s = new Solve();
                         Thread thr = new Thread(s.StartSolving);
                         thr.Start(sd);
+                        StepText.Clear();
                         break;
                     case 2:
                         GlobalVariables.isRunning = false;
