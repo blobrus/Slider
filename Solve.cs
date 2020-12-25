@@ -35,7 +35,7 @@ namespace Slider
 
             foreach (string command in commandsList)
             {
-                int sleepDelay = rand.Next(60, 75);
+                int sleepDelay = rand.Next(65, 85);
 
                 if (!GlobalVariables.isRunning)
                 {
@@ -84,7 +84,6 @@ namespace Slider
             inst = Regex.Replace(inst, "n", "n ");
             inst = Regex.Replace(inst, "t", "t ");
             inst = Regex.Replace(inst, "p", "p ");
-            //Console.WriteLine(inst);
 
             string[] commands = inst.Split(' ');
             return commands;

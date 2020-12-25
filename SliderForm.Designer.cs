@@ -67,6 +67,7 @@
             this.StartButton.TabIndex = 2;
             this.StartButton.Text = "Start (F9)";
             this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // StopButton
             // 
@@ -78,6 +79,7 @@
             this.StopButton.TabIndex = 3;
             this.StopButton.Text = "Stop (F10)";
             this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // ClearButton
             // 
@@ -88,6 +90,7 @@
             this.ClearButton.TabIndex = 4;
             this.ClearButton.Text = "Clear (F11)";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // SliderForm
             // 

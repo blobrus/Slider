@@ -50,6 +50,24 @@ namespace Slider
 
         }
 
+        //Button Handling
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            StartProcess();
+        }
+
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            StopProcess();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+
+        //HotKey Handling
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0312)
@@ -59,23 +77,39 @@ namespace Slider
                 switch (id)
                 {
                     case 1:
-                        GlobalVariables.isRunning = true;
-                        SolverData sd = new SolverData(StepText.Text);
-                        Solve s = new Solve();
-                        Thread thr = new Thread(s.StartSolving);
-                        thr.Start(sd);
-                        StepText.Clear();
+                        StartProcess();
                         break;
                     case 2:
-                        GlobalVariables.isRunning = false;
+                        StopProcess();
                         break;
                     case 3:
-                        StepText.Clear();
+                        ClearTextBox();
                         break;
                 }
             }
 
             base.WndProc(ref m);
+        }
+
+        private void StartProcess()
+        {
+            GlobalVariables.isRunning = true;
+            SolverData sd = new SolverData(StepText.Text);
+            Solve s = new Solve();
+            Thread thr = new Thread(s.StartSolving);
+            thr.Start(sd);
+            StepText.Clear();
+        }
+
+
+        private void StopProcess()
+        {
+            GlobalVariables.isRunning = false;
+        }
+
+        private void ClearTextBox()
+        {
+            StepText.Clear();
         }
     }
 }
