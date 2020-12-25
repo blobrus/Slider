@@ -14,8 +14,6 @@ namespace Slider
 {
     public class Solve
     {
-        [DllImport("User32.dll")]
-        static extern int SetForegroundWindow(IntPtr point);
 
         public Solve()
         {
@@ -28,13 +26,6 @@ namespace Slider
             string[] commandsList = Commands(sd.Instructions);
             var rand = new Random();
             InputSimulator sim = new InputSimulator();
-            Process p = Process.GetProcessesByName("rs2client").FirstOrDefault();
-
-            if (p != null)
-            {
-                IntPtr h = p.MainWindowHandle;
-                SetForegroundWindow(h);
-            }
 
             foreach (string command in commandsList)
             {
@@ -44,32 +35,27 @@ namespace Slider
                 {
                     return;
                 }
-                if (p != null)
+                if (command.Contains("up"))
                 {
+                    sim.Keyboard.KeyPress(VirtualKeyCode.UP);
+                    Task.Delay(sleepDelay).Wait();
+                }
+                else if (command.Contains("left"))
+                {
+                    sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+                    Task.Delay(sleepDelay).Wait();
+                }
+                else if (command.Contains("right"))
+                {
+                    sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+                    Task.Delay(sleepDelay).Wait();
+                }
+                else if (command.Contains("down"))
+                {
+                    sim.Keyboard.KeyPress(VirtualKeyCode.DOWN);
+                    Task.Delay(sleepDelay).Wait();
 
-                    if (command.Contains("up"))
-                    {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.UP);
-                        Task.Delay(sleepDelay).Wait();
-                    }
-                    else if (command.Contains("left"))
-                    {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
-                        Task.Delay(sleepDelay).Wait();
-                    }
-                    else if (command.Contains("right"))
-                    {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
-                        Task.Delay(sleepDelay).Wait();
-                    }
-                    else if (command.Contains("down"))
-                    {
-                        sim.Keyboard.KeyPress(VirtualKeyCode.DOWN);
-                        Task.Delay(sleepDelay).Wait();
-
-                    }
-
-                }                
+                }               
             }
 
             GlobalVariables.isRunning = false;
