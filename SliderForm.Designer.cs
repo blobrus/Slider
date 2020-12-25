@@ -37,13 +37,18 @@
             // 
             // StepText
             // 
+            this.StepText.AcceptsReturn = true;
+            this.StepText.AcceptsTab = true;
             this.StepText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.StepText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StepText.Location = new System.Drawing.Point(31, 25);
+            this.StepText.Multiline = true;
             this.StepText.Name = "StepText";
             this.StepText.Size = new System.Drawing.Size(162, 20);
             this.StepText.TabIndex = 0;
+            this.StepText.WordWrap = false;
             // 
             // ClueLabel
             // 
@@ -69,7 +74,6 @@
             this.StartButton.TabIndex = 2;
             this.StartButton.Text = "Start (F9)";
             this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // StopButton
             // 

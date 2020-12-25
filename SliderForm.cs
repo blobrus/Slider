@@ -50,11 +50,6 @@ namespace Slider
 
         }
 
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("F9 pressed!");
-        }
-
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0312)
