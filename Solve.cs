@@ -35,7 +35,7 @@ namespace Slider
 
             foreach (string command in commandsList)
             {
-                int sleepDelay = rand.Next(25, 50);
+                int sleepDelay = rand.Next(60, 75);
 
                 if (!GlobalVariables.isRunning)
                 {

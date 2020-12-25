@@ -44,7 +44,7 @@
             this.StepText.Location = new System.Drawing.Point(31, 25);
             this.StepText.Multiline = true;
             this.StepText.Name = "StepText";
-            this.StepText.Size = new System.Drawing.Size(162, 20);
+            this.StepText.Size = new System.Drawing.Size(162, 35);
             this.StepText.TabIndex = 0;
             // 
             // ClueLabel
@@ -61,7 +61,7 @@
             // 
             this.StartButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StartButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.StartButton.Location = new System.Drawing.Point(67, 51);
+            this.StartButton.Location = new System.Drawing.Point(67, 66);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(80, 25);
             this.StartButton.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.StopButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StopButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.StopButton.Location = new System.Drawing.Point(67, 82);
+            this.StopButton.Location = new System.Drawing.Point(67, 97);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(80, 25);
             this.StopButton.TabIndex = 3;
@@ -82,7 +82,7 @@
             // ClearButton
             // 
             this.ClearButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ClearButton.Location = new System.Drawing.Point(67, 113);
+            this.ClearButton.Location = new System.Drawing.Point(67, 128);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(80, 25);
             this.ClearButton.TabIndex = 4;
