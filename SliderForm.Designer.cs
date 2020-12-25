@@ -39,22 +39,17 @@
             // 
             this.StepText.AcceptsReturn = true;
             this.StepText.AcceptsTab = true;
-            this.StepText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StepText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StepText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StepText.Location = new System.Drawing.Point(31, 25);
             this.StepText.Multiline = true;
             this.StepText.Name = "StepText";
             this.StepText.Size = new System.Drawing.Size(162, 20);
             this.StepText.TabIndex = 0;
-            this.StepText.WordWrap = false;
             // 
             // ClueLabel
             // 
-            this.ClueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClueLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ClueLabel.AutoSize = true;
             this.ClueLabel.Location = new System.Drawing.Point(52, 9);
             this.ClueLabel.Name = "ClueLabel";
@@ -64,9 +59,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StartButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StartButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.StartButton.Location = new System.Drawing.Point(67, 51);
             this.StartButton.Name = "StartButton";
@@ -77,9 +70,7 @@
             // 
             // StopButton
             // 
-            this.StopButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StopButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StopButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.StopButton.Location = new System.Drawing.Point(67, 82);
             this.StopButton.Name = "StopButton";
@@ -90,10 +81,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClearButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClearButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ClearButton.Location = new System.Drawing.Point(67, 113);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(80, 25);
