@@ -6,6 +6,9 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Windows.Forms;
+using WindowsInput.Native;
+using WindowsInput;
+using System.Threading.Tasks;
 
 namespace Slider
 {
@@ -35,7 +38,6 @@ namespace Slider
 
             foreach (string command in commandsList)
             {
-                Console.WriteLine(command);
                 int sleepDelay = rand.Next(50, 150);
 
                 if (!GlobalVariables.isRunning)
@@ -45,25 +47,25 @@ namespace Slider
                 if (p != null)
                 {
 
-                    if (command.Equals("up"))
+                    if (command.Contains("up"))
                     {
                         sim.Keyboard.KeyPress(VirtualKeyCode.UP);
-                        Thread.Sleep(sleepDelay);
+                        Task.Delay(sleepDelay).Wait();
                     }
-                    else if (command.Equals("left"))
+                    else if (command.Contains("left"))
                     {
                         sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
-                        Thread.Sleep(sleepDelay);
+                        Task.Delay(sleepDelay).Wait();
                     }
-                    else if (command.Equals("right"))
+                    else if (command.Contains("right"))
                     {
                         sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
-                        Thread.Sleep(sleepDelay);
+                        Task.Delay(sleepDelay).Wait();
                     }
-                    else if (command.Equals("down"))
+                    else if (command.Contains("down"))
                     {
                         sim.Keyboard.KeyPress(VirtualKeyCode.DOWN);
-                        Thread.Sleep(sleepDelay);
+                        Task.Delay(sleepDelay).Wait();
 
                     }
 
