@@ -27,15 +27,10 @@ namespace Slider
             var rand = new Random();
             Process p = Process.GetProcessesByName("rs2client").FirstOrDefault();
 
-            if (p != null)
-            {
-                IntPtr h = p.MainWindowHandle;
-                SetForegroundWindow(h);
-            }
 
             foreach (string command in commandsList)
             {
-                int sleepDelay = rand.Next(65, 85);
+                int sleepDelay = rand.Next(100, 110);
 
                 if (!GlobalVariables.isRunning)
                 {
@@ -43,27 +38,28 @@ namespace Slider
                 }
                 if (p != null)
                 {
+                    IntPtr h = p.MainWindowHandle;
+                    SetForegroundWindow(h);
 
                     if (command.Contains("up"))
                     {
                         SendKeys.SendWait("{UP}");
-                        Task.Delay(sleepDelay).Wait();
+                        Thread.Sleep(sleepDelay);
                     }
                     else if (command.Contains("left"))
                     {
                         SendKeys.SendWait("{Left}");
-                        Task.Delay(sleepDelay).Wait();
+                        Thread.Sleep(sleepDelay);
                     }
                     else if (command.Contains("right"))
                     {
                         SendKeys.SendWait("{RIGHT}");
-                        Task.Delay(sleepDelay).Wait();
+                        Thread.Sleep(sleepDelay);
                     }
                     else if (command.Contains("down"))
                     {
                         SendKeys.SendWait("{DOWN}");
-                        Task.Delay(sleepDelay).Wait();
-
+                        Thread.Sleep(sleepDelay);
                     }
 
                 }                
